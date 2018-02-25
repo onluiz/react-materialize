@@ -20,6 +20,16 @@ const common = {
   module: {
     rules: [
       {
+        test: /\.scss$/,
+        use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            { loader: 'css-loader' },
+            { loader: 'sass-loader' }
+          ]
+        }))
+      },
+      {
         test: /\.js$/,
         loader: 'cache-loader!babel-loader?cacheDirectory=true',
         exclude: /node_modules/
@@ -42,6 +52,7 @@ const common = {
     new HtmlWebpackPlugin({
       template: './src/index.ejs'
     }),
+    new ExtractTextPlugin('application.css'),
     new webpack.optimize.ModuleConcatenationPlugin()
   ],
   externals: {
@@ -65,12 +76,6 @@ const devConfig = {
     `webpack-dev-server/client?http://localhost:${PORT}`,
     'webpack/hot/only-dev-server'
   ],
-  module: {
-    rules: [{
-      test: /\.css$/,
-      loader: 'style-loader!css-loader?sourceMap?convertToAbsoluteUrls'
-    }]
-  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
@@ -87,17 +92,7 @@ const devConfig = {
 };
 
 const prodConfig = {
-  module: {
-    rules: [{
-      test: /\.css$/,
-      use: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: 'css-loader'
-      })
-    }]
-  },
   plugins: [
-    new ExtractTextPlugin('application.css'),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production')
