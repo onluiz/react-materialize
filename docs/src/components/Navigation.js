@@ -18,28 +18,29 @@ class Navigation extends React.Component {
   }
 
   componentDidMount () {
-    $('.button-collapse').sideNav({
-      closeOnClick: isMobile,
-      edge: 'left'
-    });
+    // $('.button-collapse').sideNav({
+      // closeOnClick: isMobile,
+      // edge: 'left'
+    // });
   }
 
   onChange (title) {
     this.setState({ title });
   }
 
+  // <a href='#' data-activates='nav-mobile' className='button-collapse top-nav full hide-on-large-only'>
+    // <i className='material-icons'>menu</i>
+  // </a>
+
   render () {
     return (
       <header>
-        <div className='container'>
-          <a href='#' data-activates='nav-mobile' className='button-collapse top-nav full hide-on-large-only'>
-            <i className='material-icons'>menu</i>
-          </a>
-        </div>
-        <ul id='nav-mobile' className='side-nav fixed'>
+        <ul className='sidenav sidenav-fixed'>
           <li className='logo'>
-            <NavLink to='/' className='brand-logo' title='React Materialize' id='logo-container'>
-              <img src='img/react-materialize-logo.svg' alt='React Materialize' />
+            <NavLink to='/' className='logo__brand' title='React Materialize'>
+              <object className='logo__object' data='img/react-materialize-logo.svg' type='image/svg+xml'>
+                <img src='img/react-materialize-logo.svg' alt='React Materialize' />
+              </object>
             </NavLink>
           </li>
           <Search routes={routes} />

@@ -10,19 +10,30 @@ const renderPageTitle = () => capitalize(getPageTitle());
 
 const Main = () => (
   <main>
-    <div className='section no-pad-bot' id='index-banner'>
-      <div className='container'>
-        <h1 className='header center-on-small-only'>
-          { renderPageTitle() }
-        </h1>
+    <nav className="top-nav">
+      <div className="container">
+        <div className="nav-wrapper">
+          <div className="row">
+            <div className="col s12 m10 offset-m1">
+              <h1 className="header">{renderPageTitle()}</h1>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </nav>
+
     <div className='container'>
-      {routesConfig.map((routesSection) => {
-        return routesSection.component
-          ? renderRoute(routesSection)
-          : routesSection.routes.map(renderRoute);
-      })}
+      <div className="row">
+        <div className="col s12 m10 offset-m1">
+          <div className="section">
+            {routesConfig.map((routesSection) => {
+              return routesSection.component
+                ? renderRoute(routesSection)
+                : routesSection.routes.map(renderRoute);
+            })}
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 );
