@@ -9,29 +9,17 @@ const capitalize = path => path[0] ? path[0].toUpperCase() + path.substr(1) : ''
 const renderPageTitle = () => capitalize(getPageTitle());
 
 const Main = () => (
-  <main>
-    <nav className="top-nav">
-      <div className="container">
-        <div className="nav-wrapper">
-          <div className="row">
-            <div className="col s12 m10 offset-m1">
-              <h1 className="header">{renderPageTitle()}</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
+  <main className='main'>
+    <div className='row'>
+      <div className='col s12 m8 offset-m1 xl7 offset-xl1'>
+          <h1 className="header">{renderPageTitle()}</h1>
 
-    <div className='container'>
-      <div className="row">
-        <div className="col s12 m10 offset-m1">
-          <div className="section">
+          <div className='section'>
             {routesConfig.map((routesSection) => {
               return routesSection.component
                 ? renderRoute(routesSection)
                 : routesSection.routes.map(renderRoute);
             })}
-          </div>
         </div>
       </div>
     </div>

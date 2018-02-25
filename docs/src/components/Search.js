@@ -79,8 +79,7 @@ class Search extends React.Component {
 
   render () {
     let classes = {
-      'search-wrapper': true,
-      card: true
+      'search-wrapper': true
     };
     classes.focused = this.state.focused;
     return (
