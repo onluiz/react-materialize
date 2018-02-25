@@ -3,8 +3,8 @@ require('react-hot-loader/patch');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import 'materialize-css/css/ghpages-materialize.css';
-import '../assets/stylesheets/main.css';
+import '../node_modules/materialize-css/sass/materialize.scss';
+import './assets/overrides.scss';
 import App from './components/App';
 
 const target = document.getElementById('root');
