@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
-class AppWrapper extends React.Component {
+class AppWrapper extends Component {
   componentDidUpdate (prevProps) {
     if (this.props.location !== prevProps.location) {
       window.scrollTo(0, 0);
@@ -12,11 +12,11 @@ class AppWrapper extends React.Component {
   render () {
     const { children, ...otherProps } = this.props;
     return (
-      <div>
+      <Fragment>
         { React.Children.map(children, child =>
           React.cloneElement(child, { ...otherProps }))
         }
-      </div>
+      </Fragment>
     )
   }
 }
