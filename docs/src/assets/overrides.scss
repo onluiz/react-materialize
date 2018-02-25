@@ -1,0 +1,19 @@
+$header-height: 140px;
+
+.sidenav {
+  .logo {
+    height: $header-height;
+    margin: 10px 0;
+
+    &__object {
+      display: inline-block;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    &__brand {
+      height: 100%;
+      text-align: center;
+    }
+  }
+}
