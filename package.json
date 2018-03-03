@@ -15,7 +15,8 @@
     "build": "babel -d lib src",
     "lint": "eslint src test; exit 0",
     "fix": "eslint src test --fix",
-    "release": "npm run build && npm publish"
+    "release": "npm run build && npm publish",
+    "start": "start-storybook -p 9001 -c docs/.storybook"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,10 @@
   },
   "homepage": "https://github.com/react-materialize/react-materialize",
   "devDependencies": {
+    "@storybook/addon-centered": "^3.3.14",
+    "@storybook/addon-info": "^3.3.14",
+    "@storybook/addon-options": "^3.3.14",
+    "@storybook/react": "^3.3.14",
     "babel-cli": "^6.1.18",
     "babel-core": "^6.1.21",
     "babel-eslint": "^6.1.2",
@@ -62,7 +67,7 @@
     "react-test-renderer": "^16.0.0",
     "sinon": "^1.17.7",
     "sinon-chai": "^2.10.0",
-    "webpack": "^1.13.1"
+    "webpack": "^2.7.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
