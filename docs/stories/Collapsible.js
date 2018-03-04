@@ -1,19 +1,23 @@
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
-import Accordion from '../../examples/Accordion';
+import CollapsibleAccordion from '../../examples/CollapsibleAccordion';
+import CollapsibleBasic from '../../examples/CollapsibleBasic';
+import CollapsiblePopout from '../../examples/CollapsiblePopout';
 
 const info = `
-  We are using a standard 12 column fluid responsive grid system.
-  The grid helps you layout your page in an ordered, easy fashion.
+  Collapsibles are accordion elements that expand when clicked on.
+  They allow you to hide content that is not immediately relevant to the user.
 
   ~~~js
-    <Row>
-      <Col s={12} m={6} l={2}>
+    <Collapsible>
+      <CollapsibleItem>
         ...
-      </Col>
-    </Row>
+      </CollapsibleItem>
+    </Collapsible>;
   ~~~
 `;
 
 storiesOf('JS', module)
-  .add('Collapsible (accordion)', withInfo(info)(() => Accordion));
+  .add('Collapsible - basic', withInfo(info)(() => CollapsibleBasic))
+  .add('Collapsible - accordion', withInfo(info)(() => CollapsibleAccordion))
+  .add('Collapsible - popout', withInfo(info)(() => CollapsiblePopout));
