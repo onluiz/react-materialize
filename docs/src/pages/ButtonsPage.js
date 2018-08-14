@@ -1,6 +1,7 @@
 import React from 'react';
 import Row from 'Row';
 import Col from 'Col';
+import { NavLink } from 'react-router-dom';
 import ReactPlayground from './ReactPlayground';
 import PropTable from './PropTable';
 import Samples from './Samples';
@@ -30,6 +31,21 @@ const ButtonsPage = () => (
         <ReactPlayground code={Samples.floatingButton}>
           {floatingButton}
         </ReactPlayground>
+      </Col>
+      <Col s={12}>
+        <h5>Floating Action Button</h5>
+        <p>
+          See the documentation on <NavLink to='/floatingActionButton'>this page</NavLink>
+        </p>
+      </Col>
+      <h4 className='col s12'>
+        Flat
+      </h4>
+      <p className='col s12 caption'>
+        Flat buttons are used to reduce excessive layering. For example, flat buttons are usually used for actions within a card or modal so there aren't too many overlapping shadows.
+      </p>
+      <Col s={12}>
+        <ReactPlayground code={Samples.flatButton} />
       </Col>
       <h4 className='col s12'>
         Submit Button
