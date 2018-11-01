@@ -53,5 +53,6 @@ export default {
   smallButton: require('!raw-loader!../../../examples/SmallButton.js'),
   tab: require('!raw-loader!../../../examples/Tab.js'),
   tableBorderless: require('!raw-loader!../../../examples/BorderlessTable.js'),
-  toast: require('!raw-loader!../../../examples/Toast.js')
+  toast: require('!raw-loader!../../../examples/Toast.js'),
+  toastProgrammatically: require('!raw-loader!../../../examples/ToastProgrammatically.js')
 };

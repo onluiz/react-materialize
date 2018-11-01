@@ -148,6 +148,17 @@ exports[`<Modal /> renders a trigger renders 1`] = `
 </Modal>
 `;
 
+exports[`<Modal /> renders a trigger renders 1`] = `
+<div>
+  <button
+    onClick={[Function]}
+  >
+    click
+  </button>
+  <Portal />
+</div>
+`;
+
 exports[`<Modal /> without a trigger renders 1`] = `
 <Modal
   actions={
