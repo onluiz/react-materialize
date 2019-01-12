@@ -48,7 +48,7 @@ class Dropdown extends Component {
     const { trigger } = this.props;
 
     return React.cloneElement(trigger, {
-      ref: t => (this._trigger = `[data-target=${this.idx}]`),
+      ref: t => (this._trigger = t._btnEl),
       className: cx(trigger.props.className, 'dropdown-trigger'),
       'data-target': this.idx
     });
